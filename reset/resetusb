@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+set -u
+
+echo -n '1-0:1.0' | sudo tee /sys/bus/usb/drivers/hub/unbind > /dev/null
+echo -n '1-0:1.0' | sudo tee /sys/bus/usb/drivers/hub/bind > /dev/null
+
+echo -n '3-0:1.0' | sudo tee /sys/bus/usb/drivers/hub/unbind > /dev/null
+echo -n '3-0:1.0' | sudo tee /sys/bus/usb/drivers/hub/bind > /dev/null

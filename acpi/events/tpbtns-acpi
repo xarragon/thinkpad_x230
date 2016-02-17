@@ -1,0 +1,2 @@
+event=button[ /](volumeup|volumedown|mute|f20|prog1|screenlock|sleep|wlan)
+action=/etc/acpi/actions/tpbtns.sh %e

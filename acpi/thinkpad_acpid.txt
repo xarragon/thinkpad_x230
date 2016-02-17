@@ -1,0 +1,31 @@
+Lenovo Thinkpad X230 ACPID Scripts
+==================================
+These scripts work for me running Debian Jessie AMD64 with backported
+kernel 4.3.0. I do not have PulseAudio installed, running only ALSA.
+
+Currently only muting, volume up and down is implemented.
+
+Copy the event definition script (tpbtns-acpi) into /etc/acpid/events
+and the action script (tpbtns.sh) into /etc/acpid/actions.
+
+Restart ACPID:
+$ sudo systemctl restart acpid
+
+You should now be able to lower, raise and mute the master volume.
+
+
+Debugging the scripts:
+
+Add 'set -x' to the action script, then run ACPID in the foreground:
+
+Stop ACPID temporarily:
+$ sudo systemctl stop acpid
+
+Launch ACPID in debug mode (will remain in foreground):
+$ sudo /usr/sbin/acpid --debug --logevents
+
+You can now see everything that happens. Fix issues, remove debug
+output from scripts and then restart ACPID:
+
+$ sudo systemctl start acpid
+

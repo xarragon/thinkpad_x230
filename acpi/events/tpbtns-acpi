@@ -1,2 +1,2 @@
-event=button[ /](volumeup|volumedown|mute|f20|prog1|screenlock|sleep|wlan)
+event=(button|video|cd)[ /](volumeup|volumedown|mute|f20|prog1|screenlock|sleep|wlan|switchmode|brightnessup|brightnessdown)
 action=/etc/acpi/actions/tpbtns.sh %e
